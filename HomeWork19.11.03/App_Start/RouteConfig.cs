@@ -16,7 +16,7 @@ namespace HomeWork19._11._03
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Admin", action = "Users", id = UrlParameter.Optional }
             );
         }
     }

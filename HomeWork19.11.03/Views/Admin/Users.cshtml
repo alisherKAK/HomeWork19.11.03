@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Models.User>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Users</title>
+    <link href="~/Content/Users.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- IE < 10 does not like giving a tbody a height.  The workaround here applies the scrolling to a wrapped <div>. -->
+    <!--[if lte IE 9]>
+    <div class="old_ie_wrapper">
+    <!--<![endif]-->
+
+    <table class="fixed_headers">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+            <tr>
+                <td><a href="/Admin/User/@user.Id">@user.Id</a></td>
+                <td>@user.Login</td>
+                <td>@user.Password</td>
+                <td>@user.Email</td>
+                <td>@user.Phone</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
